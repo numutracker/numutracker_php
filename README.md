@@ -1,6 +1,6 @@
 # Numu Tracker PHP v2 Backend
 
-This is the v2 backend for Numu Tracker, written in PHP. v1 was very sloppy and this was meant to be a cleaner rebuild with a more optimized database. There are two parts to the backend. One part is dedicated to pulling information into the local database from the Musicbrainz API, and the second part is a REST-like (lazy) API to support the Numu Tracker iOS application.
+This is the v2 backend for Numu Tracker, written in PHP. v1 was very sloppy and this was meant to be a cleaner rebuild with a more optimized database. There are two parts to the backend. One part is dedicated to pulling information into the local database from the Musicbrainz API, and the second part is a REST-like API to support the Numu Tracker iOS application.
 
 Built November 2016.
 

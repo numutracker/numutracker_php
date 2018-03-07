@@ -21,15 +21,15 @@ From there the API won't work until you set up a user, import some artists throu
 
 The JSON API accepts a variety of commands, uses basic auth, and is accessible via json.php. Here's some examples of queries it can return.
 
-**Recent Releases**
+**Recent Releases**  
 https://www.numutracker.com/v2/json.php?page=1&rel_mode=all&limit=20&offset=0
 
-**Upcoming Releases**
+**Upcoming Releases**  
 https://www.numutracker.com/v2/json.php?page=1&rel_mode=allupcoming&limit=20&offset=0
 
-**User's Unlistened Releases**
+**User's Unlistened Releases**  
 https://www.numutracker.com/v2/json.php?user=test@test.com&rel_mode=unlistened&page=1&limit=20&offset=0
 
-**User's Upcoming Releases**
+**User's Upcoming Releases**  
 https://www.numutracker.com/v2/json.php?user=test@test.com&rel_mode=upcoming&page=1&limit=20&offset=0
 

@@ -4,7 +4,7 @@ This is the v2 backend for Numu Tracker, written in PHP. v1 was very sloppy and 
 
 Built November 2016.
 
-As of March 6th, 2018, this is in production at https://www.numutracker.com
+It is meant to support the iOS app, available here: https://itunes.apple.com/us/app/numu-new-music-tracker/id1158641228
 
 New version built in Django with more improvements is in development, follow along at https://github.com/amiantos/numutracker_django
 
@@ -19,4 +19,17 @@ New version built in Django with more improvements is in development, follow alo
 
 From there the API won't work until you set up a user, import some artists through the API, and then start running backend.php periodically to create and import artist information from MusicBrainz.
 
-The JSON API accepts a variety of commands, uses basic auth, and is accessible via json.php
+The JSON API accepts a variety of commands, uses basic auth, and is accessible via json.php. Here's some examples of queries it can return.
+
+**Recent Releases**
+https://www.numutracker.com/v2/json.php?page=1&rel_mode=all&limit=20&offset=0
+
+**Upcoming Releases**
+https://www.numutracker.com/v2/json.php?page=1&rel_mode=allupcoming&limit=20&offset=0
+
+**User's Unlistened Releases**
+https://www.numutracker.com/v2/json.php?user=test@test.com&rel_mode=unlistened&page=1&limit=20&offset=0
+
+**User's Upcoming Releases**
+https://www.numutracker.com/v2/json.php?user=test@test.com&rel_mode=upcoming&page=1&limit=20&offset=0
+

@@ -4,6 +4,10 @@ This is the v2 backend for Numu Tracker, written in PHP. v1 was very sloppy and 
 
 Built November 2016.
 
+As of March 6th, 2018, this is in production at https://www.numutracker.com
+
+New version built in Django with more improvements is in development, follow along at https://github.com/amiantos/numutracker_django
+
 ## To Install
 
 1. Import database.sql into your MySQL database.
@@ -15,4 +19,4 @@ Built November 2016.
 
 From there the API won't work until you set up a user, import some artists through the API, and then start running backend.php periodically to create and import artist information from MusicBrainz.
 
-The JSON API accepts a variety of commands and uses basic auth.
+The JSON API accepts a variety of commands, uses basic auth, and is accessible via json.php

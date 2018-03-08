@@ -39,7 +39,7 @@ $path_parts = explode('/', $_GET['path']);
 
 if (isset($_GET['page'])) {
 	if ($_GET['page'] != '') {
-		$page = $mysqli->real_escape_string($_GET['page']_;
+		$page = $mysqli->real_escape_string($_GET['page']);
 	}
 }
 if (!isset($page)) {

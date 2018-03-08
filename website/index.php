@@ -31,11 +31,15 @@ function time_elapsed_string($datetime, $full = false) {
 
 session_start();
 
+    require_once 'classes/database.php';
+    $db = Database::getInstance();
+    $mysqli = $db->getConnection(); 
+
 $path_parts = explode('/', $_GET['path']);
 
 if (isset($_GET['page'])) {
 	if ($_GET['page'] != '') {
-		$page = $_GET['page'];
+		$page = $mysqli->real_escape_string($_GET['page']_;
 	}
 }
 if (!isset($page)) {
@@ -47,11 +51,9 @@ if ($page < 1) {
 
 	require_once 'classes/release.php';
 	require_once 'classes/artist.php';
-	require_once 'classes/database.php';
 	require_once 'classes/data.php';
 	
-	$db = Database::getInstance();
-	$mysqli = $db->getConnection(); 
+
 
 	
 if (isset($_SESSION['user_id'])) {

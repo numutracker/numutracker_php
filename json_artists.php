@@ -9,7 +9,7 @@ if (isset($_GET['artists'])) {
 	$result = $mysqli->query($sql_query);
 	$num_rows = $result->num_rows;
 	
-	if (isset($_GET['sortby'])) { $sort = $_GET['sortby']; } else { $sort = ''; }
+	if (isset($_GET['sortby'])) { $sort = $mysqli->real_escape_string($_GET['sortby']); } else { $sort = ''; }
 	
 	if ($num_rows == 1) { 
 		$row = mysqli_fetch_array($result);
@@ -135,7 +135,7 @@ if (isset($_GET['artist_search'])) {
 	$result = $mysqli->query($sql_query);
 	$num_rows = $result->num_rows;
 	
-	if (isset($_GET['search'])) { $search = $_GET['search']; }
+	if (isset($_GET['search'])) { $search = $mysqli->real_escape_string($_GET['search']); }
 	
 	if ($num_rows == 1) { 
 		$row = mysqli_fetch_array($result);
@@ -256,7 +256,7 @@ if (isset($_GET['single_artist'])) {
 	$result = $mysqli->query($sql_query);
 	$num_rows = $result->num_rows;
 	
-	if (isset($_GET['search'])) { $search = $_GET['search']; }
+	if (isset($_GET['search'])) { $search = $mysqli->real_escape_string($_GET['search']); }
 	
 	if ($num_rows == 1) { 
 		$row = mysqli_fetch_array($result);

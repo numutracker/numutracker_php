@@ -10,6 +10,7 @@ if (isset($_GET['rel_mode'])) {
 	if (isset($_GET['page'])) {
 		$page = $mysqli->real_escape_string($_GET['page']);
 		$limit = $mysqli->real_escape_string($_GET['limit']);
+		if ($limit > 50) { $limit = 50; 
 		$offset = $mysqli->real_escape_string($_GET['offset']);
 	} else if ($rel_mode == 'artist') {
 		$page = 1;

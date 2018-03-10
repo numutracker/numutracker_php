@@ -2,11 +2,22 @@
 
 This is the v2 backend for Numu Tracker, written in PHP. v1 was very sloppy and this was meant to be a cleaner rebuild with a more optimized database. There are two parts to the backend. One part is dedicated to pulling information into the local database from the Musicbrainz API, and the second part is a REST-like API to support the Numu Tracker iOS application.
 
+There's also a roughshod website version in the /website/ directory. As of March 10th, 2018, you can see the website in action at https://www.numutracker.com
+
 Built November 2016.
 
-It is meant to support the iOS app, available here: https://itunes.apple.com/us/app/numu-new-music-tracker/id1158641228
+# iOS App
 
-New version built in Django with more improvements is in development, follow along at https://github.com/amiantos/numutracker_django
+This API was built to support the iOS app, but in theory could support an app for any platform.
+
+Github: https://github.com/amiantos/numutracker_ios
+App Store: https://itunes.apple.com/us/app/numu-new-music-tracker/id1158641228
+
+# v3 In Development
+
+New version built in Django with more improvements is in development!
+
+https://github.com/amiantos/numutracker_django
 
 ## To Install
 
@@ -15,7 +26,6 @@ New version built in Django with more improvements is in development, follow alo
 3. Rename example.database.php to database.php and insert your MySQL details.
 4. Open download_lastfm_artists.php, scan_for_album_art.php, and scan_for_artist_art.php and put in your own LastFM API key.
 5. Opn push_notifications.php and insert Pusher account info if you want to process notifications.
-
 
 From there the API won't work until you set up a user, import some artists through the API, and then start running backend.php periodically to create and import artist information from MusicBrainz.
 

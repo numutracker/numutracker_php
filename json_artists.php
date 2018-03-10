@@ -83,7 +83,7 @@ if (isset($_GET['artists'])) {
 	coalesce((SELECT IF(v2_user_artist.user_id IS NULL,'0','1')  FROM `v2_user_artist` WHERE v2_artist.artist_id = v2_user_artist.artist_id AND v2_user_artist.user_id = '".$current_user_id."'),0) as follow_status
 	FROM  `v2_user_artist`
 	LEFT JOIN  `v2_artist` ON v2_user_artist.artist_id = v2_artist.artist_id
-	LEFT JOIN  `v2_users` ON v2_user_artist.user_id = v2_users.user_id WHERE v2_users.email = '". $_GET['artists'] ."' ";
+	LEFT JOIN  `v2_users` ON v2_user_artist.user_id = v2_users.user_id WHERE v2_users.email = '". $mysqli->real_escape_string($_GET['artists']) ."' ";
 	
 	if ($sort == 'date') {
 		$sql_query .= "ORDER BY recent_date DESC, sort_name";

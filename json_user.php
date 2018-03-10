@@ -13,7 +13,7 @@ if (isset($_GET['register']) && isset($_GET['password'])) {
 	$hashed_password = password_hash($_GET['password'], PASSWORD_DEFAULT);
 	$db = Database::getInstance();
 	$mysqli = $db->getConnection(); 
-	if ($mysqli->query("INSERT INTO v2_users (password,email) VALUES ('" . $mysqli->real_escape_string($hashed_password) . "','" . $mysqli->real_escape_string(strtolower ($_GET['register'])) . "')") == false) {
+	if ($mysqli->query("INSERT INTO v2_users (password,email) VALUES ('" . $mysqli->real_escape_string($hashed_password) . "','" . $mysqli->real_escape_string(strtolower($_GET['register'])) . "')") == false) {
 		// Should probably put more error handling in here ..
 		$return_array = array("result"=>$mysqli->error);
 	} else { 

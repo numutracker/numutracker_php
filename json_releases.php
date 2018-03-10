@@ -5,12 +5,12 @@ if (isset($_GET['rel_mode'])) {
 	$db = Database::getInstance();
 	$mysqli = $db->getConnection(); 
 	
-	$rel_mode = $_GET['rel_mode'];
+	$rel_mode = $mysqli->real_escape_string($_GET['rel_mode']);
 	
 	if (isset($_GET['page'])) {
-		$page = $_GET['page'];
-		$limit = $_GET['limit'];
-		$offset = $_GET['offset'];
+		$page = $mysqli->real_escape_string($_GET['page']);
+		$limit = $mysqli->real_escape_string($_GET['limit']);
+		$offset = $mysqli->real_escape_string($_GET['offset']);
 	} else if ($rel_mode == 'artist') {
 		$page = 1;
 		$limit = 5000;
@@ -136,7 +136,7 @@ if (isset($_GET['rel_mode'])) {
 			
 		} else if ($rel_mode == 'artist') {
 			
-			$artist_id = $_GET['artist'];
+			$artist_id = $mysqli->real_escape_string($_GET['artist']);
 			$sql = "FROM `v2_release_group` LEFT JOIN `v2_artist` as ar ON v2_release_group.artist_id = ar.artist_id WHERE v2_release_group.artist_id = '".$mysqli->real_escape_string($artist_id)."'  AND is_deleted = 0";
 			$sql .= $current_query_string;
 			$sql .= " ORDER BY date DESC,title ASC";
@@ -152,7 +152,7 @@ if (isset($_GET['rel_mode'])) {
 			$sql .= " ORDER BY date ASC,name ASC";
 		} else if ($rel_mode == 'artist') {
 			
-			$artist_id = $_GET['artist'];
+			$artist_id = $mysqli->real_escape_string($_GET['artist']);
 			$sql = "FROM `v2_release_group` LEFT JOIN `v2_artist` as ar ON v2_release_group.artist_id = ar.artist_id WHERE v2_release_group.artist_id = '".$mysqli->real_escape_string($artist_id)."'  AND is_deleted = 0 AND (type = 'Album' OR type = 'EP')";
 			$sql .= $current_query_string;
 			$sql .= " ORDER BY date DESC,title ASC";
